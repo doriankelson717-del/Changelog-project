@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.card-wrapper {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.changelog-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.changelog-header h1 {
+    font-size: 2.25rem;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 0.75rem;
+}
+
+.changelog-header p {
+    font-size: 0.95rem;
+    color: #9ca3af;
+}
+
+.timeline-container {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 80px;
+    left: calc(35% + 33px);
+    width: 1px;
+    background-color: #000000;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 35% 20px 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+
+.timeline-date {
+    text-align: right;
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #000000;
+    border-radius: 50%;
+    justify-self: center;
+    z-index: 2;
+}
+
+.timeline-title {
+    color: #111827;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.changelog-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #171717;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #333333;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 480px) {
+    .timeline-container::before {
+        left: 15px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.5rem;
+        padding-left: 2.5rem;
+        position: relative;
+        margin-bottom: 2.5rem;
+    }
+
+    .timeline-date {
+        text-align: left;
+        font-size: 0.85rem;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        left: 10px;
+        top: 4px;
+    }
+}
